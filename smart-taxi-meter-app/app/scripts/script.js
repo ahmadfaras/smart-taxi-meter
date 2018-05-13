@@ -1,17 +1,16 @@
 'use strict'
 
-
+var taxiForm = document.getElementById('taxi-form');
+var fnameInput = document.getElementById('fname-input');
+var lnameInput = document.getElementById('lname-input');
+var emailInput = document.getElementById('email-input');
 var milesInput = document.getElementById('miles-input');
-var submit = document.getElementById('submit-btn');
 var outputP = document.getElementById('output-p');
-var mileForm = document.getElementById('mile-form');
 
+taxiForm.addEventListener('submit', function(){
+	event.preventDefault();
 
-mileForm.addEventListener('submit', function(){
-	
-	event.preventDefault('');
-
-	outputP.innerHTML += 'This ride costs $' + milesInput.value * 2 ;
+	outputP.innerHTML = 'This ride costs $' + milesInput.value * 2;
 	
 });
 
