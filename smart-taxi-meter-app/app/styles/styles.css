@@ -1,15 +1,13 @@
 body{
-	background-color: black;
+	background-color: green;
 	color: white;
 	text-align: center;
 }
 h1{
 	font-size: 4em;
-}
-h3{
-	font-size: 2em;
 	color:  #66ffff;
 }
+
 p{
 	font-size: 150%;
 	color:  #66ffff;

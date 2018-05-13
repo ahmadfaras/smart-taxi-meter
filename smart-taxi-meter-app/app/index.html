@@ -8,13 +8,14 @@
 
 	<h1>Smart Taxi Meter</h1>
 
-	<h3>Enter the number if miles you will be travelling</h3>
+	<p>Fill the following fields</p>
 
-	<p>(Please round to the nearest whole number)</p>
-
-	<form id="mile-form">	
-		<input id="miles-input" type="number" name="miles">
-		<button type="submit" id="submit-btn">Submit</button>
+	<form id="taxi-form">
+		<input id="fname-input" type="text" placeholder="First name" required>
+		<input id="lname-input" type="text" placeholder="Last name">
+		<input id="email-input" type="text" placeholder="Email">
+		<input id="miles-input" type="whole" placeholder="Miles" required>
+		<button type="submit"> Submit </button>
 	</form>
 
 	<p id="output-p"></p>
