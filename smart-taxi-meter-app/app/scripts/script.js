@@ -30,6 +30,7 @@ taxiForm.addEventListener('submit', function(){
 
 });
 
+/*
 var ahmadFaras = {
 	fname: 'Ahmad',
 	lname: 'Faras',
@@ -55,4 +56,5 @@ for (var i = 0; i< riderList.length; i++){
 									'<td>'+ riderList[i].cost +'</td>'+
 								'</tr>'
 }
+*/
 
