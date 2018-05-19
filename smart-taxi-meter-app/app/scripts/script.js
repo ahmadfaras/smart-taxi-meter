@@ -16,8 +16,10 @@ taxiApp.controller('mainController', function($scope, $http){
 //Retrieve riders data from server.'/riderList' is the route we'll get data from
 		//$http is angular object
 		$http.get('riderList').then(function(response){
-			var riders = response.data;
-			//$scope.riders = response.data;
+			//var riders = response.data;
+			$scope.riders = response.data;
+
+			/*
 			for (var i = 0; i < riders.length; i++) {
 				ridersTbody.innerHTML += '<tr>'+
 									'<td>'+ riders[i].fname+'</td>'+
@@ -26,7 +28,7 @@ taxiApp.controller('mainController', function($scope, $http){
 									'<td>'+ riders[i].mileage+'</td>'+
 									'<td>'+ riders[i].cost+'</td>'+
 								'</tr>'	
-}
+}*/
 			
 	})
 
@@ -48,7 +50,15 @@ taxiForm.addEventListener('submit', function(){
 
 	}
 	var newRider = new Rider(fnameInput.value, lnameInput.value, emailInput.value, mileageInput.value, mileageInput.value*2);
+	
+	$http.post('/riderList', newRider).then(function(response) {
+		console.log(newRider);
+	});
+	getRiders();
 
+	  
+
+/*
 	ridersTbody.innerHTML += '<tr>'+
 									'<td>'+fnameInput.value+'</td>'+
 									'<td>'+lnameInput.value+'</td>'+
@@ -56,6 +66,7 @@ taxiForm.addEventListener('submit', function(){
 									'<td>'+mileageInput.value+'</td>'+
 									'<td>'+mileageInput.value * 2 +'</td>'+
 								'</tr>'
+*/
 	outputP.innerHTML = 'This ride costs you $'+mileageInput.value*2 + '.';
 
 	// After taking data from input, we assign empty string to them to 

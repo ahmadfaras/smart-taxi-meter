@@ -32,6 +32,14 @@
 			</tr>
 		</thead>
 		<tbody id="riders-tbody">
+			<tr ng-repeat= "rider in riders">
+				<td>{{rider.fname}}</td>
+				<td>{{rider.lname}}</td>
+				<td>{{rider.email}}</td>
+				<td>{{rider.mileage}}</td>
+				<td>{{rider.cost}}</td>
+				<td><button ng-click="deleteRider(rider._id)">Delete</button></td>
+			</tr>
 			<!-- After creating rider objects in script, I deleted/commented out these table data.
 			<tr> 
 				<td>Ahmad</td>
