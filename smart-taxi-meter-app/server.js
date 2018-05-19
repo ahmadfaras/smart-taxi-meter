@@ -1,9 +1,14 @@
 var express = require('express');
 var app = express();
+var mongojs = require('mongojs');
+var db = mongojs('taxidb', ['taxidb']);
+
 var port = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/app/'));
 
 app.get('/riderList', function(request, response){
+	
+	/* Now server responds to GET with objects from db, so we commented out these objects.
 	var ahmadFaras = {
 	fname: 'Ahmad',
 	lname: 'Faras',
@@ -20,6 +25,14 @@ var sunShayina = {
 };
 
 var riderList = [ahmadFaras, sunShayina];
+*/
+
+
+db.taxidb.find(function(error, docs){
+	//	console.log(docs);
+	//
+		response.json(docs);
+	})
 
 console.log('server received GET request');
 //console.log(riderList);
