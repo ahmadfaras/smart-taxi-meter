@@ -8,7 +8,6 @@
 <body ng-controller=mainController>
 
 	<h1>Smart Taxi Meter</h1>
-
 	<p>Fill the following fields</p>
 
 	<form id="taxi-form">
@@ -32,6 +31,7 @@
 			</tr>
 		</thead>
 		<tbody id="riders-tbody">
+			<!--we create angular directive and works as for loop -->
 			<tr ng-repeat= "rider in riders">
 				<td>{{rider.fname}}</td>
 				<td>{{rider.lname}}</td>

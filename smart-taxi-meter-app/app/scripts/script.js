@@ -29,14 +29,10 @@ taxiApp.controller('mainController', function($scope, $http){
 									'<td>'+ riders[i].cost+'</td>'+
 								'</tr>'	
 }*/
-			
-	})
+			})
 
 }
-
 getRiders();
-
-
 
 taxiForm.addEventListener('submit', function(){
 	event.preventDefault();
@@ -55,8 +51,6 @@ taxiForm.addEventListener('submit', function(){
 		console.log(newRider);
 	});
 	getRiders();
-
-	  
 
 /*
 	ridersTbody.innerHTML += '<tr>'+
@@ -79,7 +73,14 @@ taxiForm.addEventListener('submit', function(){
 
 	
 
-})
+});
+
+$scope.deleteRider= function(id){
+	console.log(id);
+	$http.delete('/riderList/' + id).then(function(response){
+		getRiders();
+	});
+}
 })
 
 
