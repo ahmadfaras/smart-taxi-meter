@@ -8,6 +8,7 @@ app.use(express.static(__dirname + '/app/'));
 
 app.get('/riderList', function(request, response){
 	
+	/* Now server responds to GET with objects from db, so we commented out these objects.
 	var ahmadFaras = {
 	fname: 'Ahmad',
 	lname: 'Faras',
@@ -24,10 +25,11 @@ var sunShayina = {
 };
 
 var riderList = [ahmadFaras, sunShayina];
+*/
 
 
 db.taxidb.find(function(error, docs){
-		console.log(docs);
+	//	console.log(docs);
 	//
 		response.json(docs);
 	})

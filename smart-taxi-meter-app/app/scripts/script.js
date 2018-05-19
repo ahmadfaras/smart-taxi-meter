@@ -17,7 +17,7 @@ taxiApp.controller('mainController', function($scope, $http){
 		//$http is angular object
 		$http.get('riderList').then(function(response){
 			var riders = response.data;
-			//$scope.movies = response.data;
+			//$scope.riders = response.data;
 			for (var i = 0; i < riders.length; i++) {
 				ridersTbody.innerHTML += '<tr>'+
 									'<td>'+ riders[i].fname+'</td>'+
