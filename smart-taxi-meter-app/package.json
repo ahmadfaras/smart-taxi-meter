@@ -4,6 +4,7 @@
   "description": "A web application for taxi drivers.",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongojs": "^2.5.0"
   },
