@@ -48,7 +48,16 @@ app.post('/riderList', function(request, response){
 		response.json(docs);
 	});
 
+	$scope.deleteRider = function(id){
+	console.log(id);
+	$http.delete('/riderList/' + id).then(function(response){
+		getRiders();
+	});
+}
+
+
 });
+
 
 app.listen(port, function(){
  	console.log('server starting on http://localhost:' + port);
