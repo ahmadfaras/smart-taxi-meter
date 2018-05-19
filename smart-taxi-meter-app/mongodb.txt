@@ -1,0 +1,14 @@
+ahmadFaras = {
+	"fname": "Ahmad",
+	"lname": "Faras",
+	"email": "zubairfaras1@gmail.com",
+	"mileage": 2,
+	"cost": 4
+}
+sunShayina = {
+	"fname": "Sun",
+	"lname": "Shayina",
+	"email": "shayinamawezi@gmail.com",
+	"mileage": 4,
+	"cost": 8
+}
