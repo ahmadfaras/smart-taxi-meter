@@ -17,7 +17,6 @@ taxiApp.controller('mainController', function($scope, $http){
 		$http.get('riderList').then(function(response){
 			$scope.riders = response.data;
 			})
-
 }
 getRiders();
 
