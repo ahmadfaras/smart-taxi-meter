@@ -6,11 +6,9 @@ var bodyParser = require('body-parser');
 
 var port = process.env.PORT || 3000;
 app.use(bodyParser.json());
-
 app.use(express.static(__dirname + '/app/'));
 
 app.get('/riderList', function(request, response){
-	
 db.taxidb.find(function(error, docs){
 		console.log(docs);
 		response.json(docs);
@@ -24,15 +22,14 @@ app.post('/riderList', function(request, response){
 	db.taxidb.insert(request.body, function(error, docs){
 		response.json(docs);
 	});
+});
 
-// 	$scope.deleteRider = function(id){
-// 	console.log(id);
-// 	$http.delete('/riderList/' + id).then(function(response){
-// 		getRiders();
-// 	});
-// }
-
-
+app.delete('/riderList/:id', function (request, response) {
+    var id = request.params.id; // gets the value of the id from the url
+    console.log(id);
+    db.taxidb.remove({_id: mongojs.ObjectId(id)}, function (error, document) {
+        response.json(document);
+    });
 });
 
 

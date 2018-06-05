@@ -36,20 +36,17 @@ taxiForm.addEventListener('submit', function(){
 	});
 	getRiders();
 	outputP.innerHTML = 'This ride costs you $'+mileageInput.value*2 + '.';
-
-	// After taking data from input, we assign empty string to them to 
-	// make input field clear or clean.
-	
+	// After taking data from input, we assign empty string to them to make input fields clean.
 		fnameInput.value = '';
 		lnameInput.value = '';
 		emailInput.value = '';
 		mileageInput.value = '';
 });
-
-$scope.deleteRider= function(id){
+$scope.deleteRider = function(id){
 	console.log(id);
 	$http.delete('/riderList/' + id).then(function(response){
 		getRiders();
 	});
 }
+
 });
